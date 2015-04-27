@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+<script src="SpryAssets/SpryValidationTextField.js" type="text/javascript"></script>
+<script src="SpryAssets/SpryValidationPassword.js" type="text/javascript"></script>
+<link href="SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css">
+<link href="SpryAssets/SpryValidationPassword.css" rel="stylesheet" type="text/css">
+</head>
+<body background="images/Med_sym.jpg">
+	<form method="POST"
+		action="http://localhost:8080/MedicalApplication/EmployeeServlet">
+		<table cellpadding="5" width="20%" align="left" cellspacing="5">
+			<tr>
+				<td>officer Name</td>
+				<td><span id="sprytextfield1">
+				  <label for="officername"></label>
+				  <input type="text" name="officername" id="officername">
+			    <span class="textfieldRequiredMsg">A value is required.</span></span></td>
+			</tr>
+			<tr>
+				<td>Pass Word</td>
+				<td><span id="sprypassword1">
+				  <label for="password"></label>
+				  <input type="password" name="password" id="password">
+			    <span class="passwordRequiredMsg">A value is required.</span></span></td>
+			</tr>
+			<tr>
+				<td>Hospital Name :</td>
+				<td><select name="hospitalname">
+						<option value="-1" selected>select..</option>
+						<option value="Yashoda">Yashoda</option>
+						<option value="Appolo">Appolo</option>
+						<option value="Krishna Institute of Medical Sciences">
+							Krishna Institute of Medical Sciences</option>
+						<option value="Woodlands">Woodlands</option>
+						<option value="Aditya Hospitals">Aditya Hospitals</option>
+						<option value="Kamineni Hospitals">Kamineni Hospitals</option>
+						<option value="Shroff Hospital">Shroff Hospital</option>
+						<option value="Gandhi Hospital">Gandhi Hospital</option>
+						<option value="Kakatiya Hospital">Kakatiya Hospital</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="submit" value="Get Details" /></td>
+			</tr>
+		</table>
+	</form>
+<script type="text/javascript">
+var sprytextfield1 = new Spry.Widget.ValidationTextField("sprytextfield1");
+var sprypassword1 = new Spry.Widget.ValidationPassword("sprypassword1");
+</script>
+</body>
+</html>

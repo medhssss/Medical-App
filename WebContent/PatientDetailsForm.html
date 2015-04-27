@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Patients Details form</title>
+<script src="SpryAssets/SpryValidationTextField.js" type="text/javascript"></script>
+<script src="SpryAssets/SpryValidationPassword.js" type="text/javascript"></script>
+<link href="SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css">
+<link href="SpryAssets/SpryValidationPassword.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+</head>
+<body background="images/Med_sym.jpg">
+<form method="POST"
+		action="http://localhost:8080/MedicalApplication/DoctorServlet">
+		<table cellpadding="2" width="20%" align="left" cellspacing="2">
+			<tr>
+				<td colspan=2>
+					<center>
+						<font size=4><b>Patient Form</b></font>
+					</center>
+				</td>
+			</tr>
+			<tr>
+			  <td>Hospital Name</td>
+				<td><span id="sprytextfield1">
+                <label for="textname"></label>
+                <input name="hospname" type="text" id="textname" size="30">
+                <span class="textfieldRequiredMsg">Please enter Hospital Name.</span><span class="textfieldMaxCharsMsg">Exceeded maximum number of characters.</span></span></td>
+			</tr>
+			
+			<tr>
+			  <td>Doctor Name</td>
+				<td><span id="sprytextfield1">
+                <label for="textname"></label>
+                <input name="docname" type="text" id="docname" size="30">
+                <span class="textfieldRequiredMsg">Please enter Doctor Name.</span><span class="textfieldMaxCharsMsg">Exceeded maximum number of characters.</span></span></td>
+			</tr>
+
+			<tr>
+				<td>Password</td>
+			  <td><span id="sprypassword1">
+              <label for="textname2"></label>
+              <input name="textname2" type="password" id="textname2" size="30" maxlength="15">
+              <span class="passwordRequiredMsg">Please Enter a Valid Password.</span><span class="passwordInvalidStrengthMsg">The password doesn't meet the specified strength.</span><span class="passwordMinCharsMsg">Minimum number of characters not met.</span></span></td>
+			</tr>
+
+			<tr>
+				<td>Patient Name</td>
+				<td><span id="sprytextfield2">
+                <label for="patientname"></label>
+                <input name="patientname" type="text" id="patientname" size="30">
+                <span class="textfieldRequiredMsg">A value is required.</span></span></td>
+			</tr>
+
+
+			<tr>
+				<td>Disease Name</td>
+				<td><span id="sprytextfield3">
+				  <label for="diseasename"></label>
+				  <input name="diseasename" type="text" id="diseasename" size="30">
+			    <span class="textfieldRequiredMsg">A value is required.</span></span></td>
+			</tr>
+			<tr>
+				<td>Disease code</td>
+				<td><span id="sprytextfield4">
+				  <label for="diseasecode"></label>
+				  <input name="diseasecode" type="text" id="diseasecode" size="30">
+			    <span class="textfieldRequiredMsg">A value is required.</span></span></td>
+			</tr>
+
+
+
+			<tr>
+				<td>Was Patient Treated Effectively:</td>
+				<td><input type="radio" name="Treatment" value="yes" size="10">yes
+					<input type="radio" name="Treatment"
+					value="no" size="10">no</td>
+			</tr>
+
+
+
+			<tr>
+				<td>If NO :</td>
+				<td><select name="No">
+						<option value="-1" selected>select..</option>
+						<option value="inability to pay the medical bill">inability
+							to pay the medical bill</option>
+						<option value=" Hospital lacking in infrastructure ">Hospital
+							lacking in infrastructure</option>
+						<option value=" More specialists needed ">More
+							specialists needed</option>
+						<option value="Could not be treated further">Could not be
+							treated further</option>
+				</select></td>
+			</tr>
+
+			<tr>
+				<td>Gender</td>
+				<td><input type="radio" name="gender" value="male" size="10">Male
+					<input type="radio" name="gender" value="female" size="10">Female</td>
+			</tr>
+
+			<tr>
+				<td>Location</td>
+				<td><span id="sprytextfield5">
+				  <label for="location"></label>
+				  <input name="location" type="text" id="location" size="30" maxlength="25">
+			    <span class="textfieldRequiredMsg">A value is required.</span></span></td>
+			</tr>
+
+			<tr>
+				<td>age</td>
+				<td><span id="sprytextfield6">
+                <label for="age"></label>
+                <input name="age" type="text" id="age" size="30" maxlength="3">
+                <span class="textfieldRequiredMsg">Enter Age.</span><span class="textfieldInvalidFormatMsg">Invalid format.</span><span class="textfieldMinValueMsg">Age Cannot be less than zero.</span></span></td>
+			</tr>
+
+			<tr>
+				<td colspan="2"><input type="submit" value="Submit Form" /></td>
+			</tr>
+
+
+		</table>
+	</form>
+<script type="text/javascript">
+var sprytextfield1 = new Spry.Widget.ValidationTextField("sprytextfield1", "none", {validateOn:["change"], maxChars:30});
+var sprypassword1 = new Spry.Widget.ValidationPassword("sprypassword1", {minAlphaChars:1, minChars:6, minNumbers:1, minUpperAlphaChars:1});
+var sprytextfield2 = new Spry.Widget.ValidationTextField("sprytextfield2", "none");
+var sprytextfield3 = new Spry.Widget.ValidationTextField("sprytextfield3");
+var sprytextfield4 = new Spry.Widget.ValidationTextField("sprytextfield4");
+var sprytextfield5 = new Spry.Widget.ValidationTextField("sprytextfield5");
+var sprytextfield6 = new Spry.Widget.ValidationTextField("sprytextfield6", "integer", {validateOn:["change"], minValue:0});
+</script>
+</body>
+</html>
